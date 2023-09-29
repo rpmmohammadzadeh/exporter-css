@@ -33,7 +33,7 @@ Rendered as:
 {[ case "Border" ]}{[ prefix = behavior.borderTokenPrefix /]}  
 {*{[ case "Measure" ]}{[ prefix = behavior.measureTokenPrefix /]}*}
 {[ case "Gradient" ]}{[ prefix = behavior.gradientTokenPrefix /]}  
-{[ default ]}{[ prefix = "" /]}  
+{[ default ]}{[ prefix = "viu" /]}  
 {[/]}
 {[ let tokenName = readableVariableName(context, tokenGroup, prefix) /]}
 {{ tokenName }}
