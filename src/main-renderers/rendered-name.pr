@@ -25,7 +25,7 @@ Rendered as:
 
 *}
 {[ let tokenGroup = ds.tokenGroupContainingTokenId(context.id) /]}
-{[ let prefix = "" /]}
+{[ let prefix = "viu" /]}
 {[ switch context.tokenType ]}
 {[ case "Color" ]}{[ prefix = behavior.colorTokenPrefix /]}
 {[ case "Typography" ]}{[ prefix = behavior.typographyTokenPrefix /]}  
