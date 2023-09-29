@@ -23,7 +23,7 @@ Rendered as:
 
 [group1][group2][...][name];
 
-*}
+
 {[ let tokenGroup = ds.tokenGroupContainingTokenId(context.id) /]}
 {[ let prefix = "" /]}
 {[ switch context.tokenType ]}
@@ -36,4 +36,37 @@ Rendered as:
 {[ default ]}{[ prefix = "" /]}  
 {[/]}
 {[ let tokenName = readableVariableName(context, tokenGroup, prefix) /]}
+{{ tokenName }}
+
+*}
+
+let tokenGroup = ds.tokenGroupsContainingTokenId(context.id)[0]
+
+let prefix = ""
+
+switch (context.tokenType) {
+  case "Color":
+    prefix = behavior.colorTokenPrefix
+    break
+  case "Typography":
+    prefix = behavior.typographyTokenPrefix
+    break
+  case "Shadow":
+    prefix = behavior.shadowTokenPrefix
+    break
+  case "Border":
+    prefix = behavior.borderTokenPrefix
+    break
+  case "Measure":
+    prefix = behavior.measureTokenPrefix
+    break
+  case "Gradient":
+    prefix = behavior.gradientTokenPrefix
+    break
+  default:
+    prefix = ""
+}
+
+let tokenName = readableVariableName(context, tokenGroup, prefix)
+
 {{ tokenName }}
