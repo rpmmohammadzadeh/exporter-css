@@ -31,7 +31,7 @@ Rendered as:
 {[ case "Typography" ]}{[ prefix = behavior.typographyTokenPrefix /]}  
 {[ case "Shadow" ]}{[ prefix = behavior.shadowTokenPrefix /]}  
 {[ case "Border" ]}{[ prefix = behavior.borderTokenPrefix /]}  
-
+{*{[ case "Measure" ]}{[ prefix = behavior.measureTokenPrefix /]}*}
 {[ case "Gradient" ]}{[ prefix = behavior.gradientTokenPrefix /]}  
 {[ default ]}{[ prefix = "" /]}  
 {[/]}
