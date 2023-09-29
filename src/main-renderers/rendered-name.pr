@@ -32,7 +32,6 @@ Rendered as:
 {[ case "Shadow" ]}{[ prefix = behavior.shadowTokenPrefix /]}  
 {[ case "Border" ]}{[ prefix = behavior.borderTokenPrefix /]}  
 {[ case "Measure" ]}{
-  [ prefix = behavior.measureTokenPrefix /],
   [ prefix = "yedhdgfvvjdb" /]
 }
 {[ case "Gradient" ]}{[ prefix = behavior.gradientTokenPrefix /]}  
