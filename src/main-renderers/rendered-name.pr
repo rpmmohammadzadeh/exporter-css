@@ -40,33 +40,42 @@ Rendered as:
 
 *}
 
-{[ let tokenGroup = ds.tokenGroupsContainingTokenId(context.id)[0] /]}
+// Create a set to store the unique token groups
+const tokenGroups = new Set()
 
-{[ let prefix = "" /]}
+// Iterate over the token groups containing the current token and add them to the set
+for (const tokenGroup of ds.tokenGroupsContainingTokenId(context.id)) {
+  tokenGroups.add(tokenGroup)
+}
 
-{[ switch (context.tokenType) { /]}
-{[   case "Color": /]}
-{[     prefix = behavior.colorTokenPrefix /]}
-{[     break /]}
-{[   case "Typography": /]}
-{[     prefix = behavior.typographyTokenPrefix /]}
-{[     break /]}
-{[   case "Shadow": /]}
-{[     prefix = behavior.shadowTokenPrefix /]}
-{[     break /]}
-{[   case "Border": /]}
-{[     prefix = behavior.borderTokenPrefix /]}
-{[     break /]}
-{[   case "Measure": /]}
-{[     prefix = behavior.measureTokenPrefix /]}
-{[     break /]}
-{[   case "Gradient": /]}
-{[     prefix = behavior.gradientTokenPrefix /]}
-{[     break /]}
-{[   default: /]}
-{[     prefix = "" /]}
-{[ } /]}
+// Get the first token group in the set
+const tokenGroup = tokenGroups.values().next().value
 
-{[ let tokenName = readableVariableName(context, tokenGroup, prefix) /]}
+let prefix = ""
+
+switch (context.tokenType) {
+  case "Color":
+    prefix = behavior.colorTokenPrefix
+    break
+  case "Typography":
+    prefix = behavior.typographyTokenPrefix
+    break
+  case "Shadow":
+    prefix = behavior.shadowTokenPrefix
+    break
+  case "Border":
+    prefix = behavior.borderTokenPrefix
+    break
+  case "Measure":
+    prefix = behavior.measureTokenPrefix
+    break
+  case "Gradient":
+    prefix = behavior.gradientTokenPrefix
+    break
+  default:
+    prefix = ""
+}
+
+let tokenName = readableVariableName(context, tokenGroup, prefix)
 
 {{ tokenName }}
