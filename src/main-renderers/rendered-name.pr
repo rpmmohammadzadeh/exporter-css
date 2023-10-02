@@ -22,7 +22,7 @@ Note: Value is passed as `context` property because it is injected
 Rendered as:
 
 [group1][group2][...][name];
-
+*}
 
 {[ let tokenGroup = ds.tokenGroupContainingTokenId(context.id) /]}
 {[ let prefix = "" /]}
@@ -38,9 +38,9 @@ Rendered as:
 {[ let tokenName = readableVariableName(context, tokenGroup, prefix) /]}
 {{ tokenName }}
 
-*}
 
 
+{*
 const tokenGroups = new Set()
 for (const tokenGroup of ds.tokenGroupsContainingTokenId(context.id)) {
   tokenGroups.add(tokenGroup)
@@ -75,3 +75,4 @@ switch (context.tokenType) {
 let tokenName = readableVariableName(context, tokenGroup, prefix)
 
 {{ tokenName }}
+*}
