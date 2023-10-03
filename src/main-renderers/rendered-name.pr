@@ -25,11 +25,11 @@ Rendered as:
 
 *}
 
-{[ const tokenGroups = new Set() /]}
+{[ tokenGroups = new Set() /]}
 {[ for tokenGroup in ds.tokenGroupsContainingTokenId(context.id) ]}
 {[ tokenGroups.add(tokenGroup) /]}
 {[/]}
-{[ const tokenGroup = tokenGroups.values().next().value /]}
+{[ tokenGroup = tokenGroups.values().next().value /]}
 
 {[ let prefix = "" /]}
 {[ switch context.tokenType ]}
