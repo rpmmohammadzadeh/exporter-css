@@ -27,7 +27,7 @@ Rendered as:
 
 {[ let tokenGroups = new Set() /]}
 {[ for tokenGroup in ds.tokenGroupsContainingTokenId(context.id) ]}
-{[ let tokenGroups.add(tokenGroup) /]}
+{[ tokenGroups.add(tokenGroup) /]}
 {[/]}
 {[ let tokenGroup = tokenGroups.values().next().value /]}
 
